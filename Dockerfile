@@ -19,4 +19,5 @@ RUN unlink /etc/nginx/sites-enabled/default
 RUN nginx -t
 RUN systemctl reload nginx
 EXPOSE 80
-CMD ["/usr/sbin/nginx", "-g", "daemon off;"]
+RUN /usr/sbin/nginx -g daemon off;
+CMD ["systemctl", "reload", "nginx"]
