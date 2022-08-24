@@ -7,6 +7,8 @@ COPY . /app
 RUN apt-get update
 RUN apt-get install nginx -y
 
+ENV TZ=Indian \
+    DEBIAN_FRONTEND=noninteractive
 RUN apt-get install php-fpm php-mysql -y
 RUN mkdir /var/www/my_domain
 RUN chown -R $root:$root /var/www/my_domain
