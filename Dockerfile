@@ -5,6 +5,5 @@
 FROM ubuntu:22.04
 COPY . /app
 RUN apt-get update
-RUN apt install nginx -y
-CMD ["systemctl", "start", "nginx"]
-CMD ["systemctl", "enable", "nginx"]
+RUN apt-get install nginx -y
+CMD ["echo", "Image CREATED"]
