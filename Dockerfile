@@ -17,6 +17,7 @@ COPY ./my_domain /etc/nginx/sites-available/my_domain
 RUN ln -s /etc/nginx/sites-available/my_domain /etc/nginx/sites-enabled/
 RUN unlink /etc/nginx/sites-enabled/default
 RUN nginx -t
+COPY ./index.html /var/www/my_domain
 EXPOSE 80
 
 CMD ["systemctl", "reload", "nginx"]
